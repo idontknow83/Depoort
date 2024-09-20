@@ -5,7 +5,7 @@
 @endsection
 @section ('content')
     <div>
-        <form action="/action_page.php" class="register-form" method="POST">
+        <form action="/action_page.php" class="register-form" method="get">
             <label for="fname">Naam:</label>
             <div>
                 <input type="text" id="vnaam" name="vnaam" placeholder="voornaam" required>
