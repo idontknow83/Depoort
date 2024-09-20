@@ -4,9 +4,8 @@
     <title>login</title>
 @endsection
 @section ('content')
-<body>
-
     <div class="login-container">
+        
         <h2>Login</h2>
         <form action="" method="post">
             <label for="number">Telefoonnummer</label>
@@ -16,9 +15,9 @@
             <input type="password" id="password" name="password" required minlength="8">
 
             <button type="submit">Inloggen</button>
-            Heb je nog geen account? <a href="register.blade.php"> Meld je hier aan</a>
+            Heb je nog geen account? <a href="register"> Meld je hier aan</a>
         </form>
     </div>
     @endsection
-</body>
+
 </html>
