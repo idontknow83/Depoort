@@ -1,14 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2; /* Kies een achtergrondkleur die je wilt */
+  display: flex;
+  flex-direction: column; /* Zorgt voor een flexibele layout */
+  height: 100vh; /* Zorgt ervoor dat de body de volledige hoogte van het scherm gebruikt */
+  margin: 0;
+}
+
+/* Navbar stijl */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #0077B6;
-}
-
-span {
-  font-size: 40px !important;
-  float: right;
 }
 
 li {
@@ -31,18 +36,7 @@ li a:hover:not(.active) {
   background-color: #0077B6;
 }
 
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-
+/* Container voor inhoud */
 .container {
   display: flex;
   justify-content: center;
@@ -51,96 +45,7 @@ body {
   padding: 20px;
 }
 
-/* Stijl van het formulier */
-form.register-form {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #4a90e2;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-  max-height: 550px; 
-  overflow-y: auto; 
-}
-
-
-label {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-input, select, textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #4a90e2;
-}
-
-
-input[type="submit"] {
-  padding: 12px;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-input[type="submit"]:hover {
-  background-color: #357ab7;
-}
-
-.address-group {
-  display: flex;
-  gap: 10px;
-}
-label#geslacht {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.gender-group {
-  display: flex;
-  justify-content: center; 
-  margin-bottom: 10px; 
-}
-
-.gender-group input[type="radio"] {
-  margin-right: 5px; 
-}
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
+/* Stijl van het login formulier */
 .login-container {
   background-color: #f6f2f2;
   padding: 20px;
@@ -148,19 +53,13 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
- 
 }
 
 h2 {
   margin-bottom: 20px;
 }
 
-label2 {
-  display: block;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
+/* Formulierelementen */
 input[type="text"],
 input[type="password"] {
   width: 90%;
@@ -182,4 +81,90 @@ button {
 
 button:hover {
   background-color: #0077B6;
+}
+
+/* Stijl van het registratieformulier */
+form.register-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #4a90e2;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  max-height: 550px; 
+  overflow-y: auto; 
+}
+
+/* Labels */
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Invoer- en tekstgebieden */
+input, select, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Focus-stijl */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* Submit-button */
+input[type="submit"] {
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #357ab7;
+}
+
+/* Specifieke stijlen */
+.label2 {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.address-group {
+  display: flex;
+  gap: 10px;
+}
+
+label#geslacht {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.gender-group {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 10px; 
 }
