@@ -83,7 +83,7 @@ button:hover {
   background-color: #0077B6;
 }
 
-/* Stijl van het registratieformulier */
+
 form.register-form {
   display: flex;
   flex-direction: column;
