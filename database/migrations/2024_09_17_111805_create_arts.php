@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('arts', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('voornaam');
-            $table->string('tussenvoegsel');
+            $table->string('tussenvoegsel')->nullable();
             $table->string('achternaam');
             $table->string('adres');
             $table->string('postcode');
