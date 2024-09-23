@@ -1,13 +1,14 @@
 @extends ('layout')
 
 @section ('title')
-    <title>login</title>
+    <title>Login</title>
 @endsection
+
 @section ('content')
     <div class="login-container">
-        
         <h2>Login</h2>
-        <form action="" method="post">
+        <form action="action_page.php" method="post">
+            @csrf
             <label for="number">Telefoonnummer</label>
             <input type="text" id="number" name="number" pattern="[0-9]{10}" required>
 
@@ -18,6 +19,5 @@
             Heb je nog geen account? <a href="register"> Meld je hier aan</a>
         </form>
     </div>
-    @endsection
+@endsection
 
-</html>
