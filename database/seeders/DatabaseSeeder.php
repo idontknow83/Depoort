@@ -2,12 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,14 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        DB::table('cliënt')->insert([
+        DB::table('client')->insert([
             'voornaam' => fake()->firstName(),
             'tussenvoegsel' => null,
             'achternaam' => fake()->lastName(),
             'foto' => fake()->imageUrl(),
-            'adres' => fake()->address(),
+            'adres' => fake()->randomNumber(4,1) . strtoupper(fake()->randomLetter() . fake()->randomLetter()),
             'postcode' => fake()->postcode(),
             'woonplaats' => fake()->city(),
             'land' => fake()->country(),
@@ -35,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'voornaam' => fake()->firstName(),
             'tussenvoegsel' => null,
             'achternaam' => fake()->lastName(),
-            'adres' => fake()->address(),
+            'adres' => fake()->randomNumber(4,1) . strtoupper(fake()->randomLetter() . fake()->randomLetter()),
             'postcode' => fake()->postcode(),
             'woonplaats' => fake()->city(),
             'land' => fake()->country(),

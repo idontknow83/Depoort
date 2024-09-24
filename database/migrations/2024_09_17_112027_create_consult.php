@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id()->primary();
             $table->string('artsId');
             $table->string('cliëntId');
-            $table->string('tekst');
+            $table->string('tekst')->nullable();
         });
     }
 

@@ -3,4 +3,3 @@
 @section ('title')
     <title>Home</title>
 @endsection
-

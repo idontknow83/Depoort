@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cliënt', function (Blueprint $table) {
+        Schema::create('client', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('voornaam');
             $table->string('tussenvoegsel')->nullable();
