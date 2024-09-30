@@ -5,7 +5,7 @@
 @endsection
 
 @section ('content')
-    <div>
+    <div class="d-flex-center">
         <form action="action_page.php" class="register-form" method="get">
             @csrf
             <label for="fname">Naam:</label>
@@ -37,7 +37,7 @@
             <input type="password" id="ww" name="ww" placeholder="wachtwoord" required minlength="8">
 
             <label id="geslacht">Geslacht:</label>
-            <div class="gender-group">
+            <div class="gender-group d-flex-center">
                 <input type="radio" id="man" name="geslacht" value="man" required>
                 <label for="man">Man</label>
                 <input type="radio" id="vrouw" name="geslacht" value="vrouw" required>
@@ -49,5 +49,5 @@
 
             <input type="submit" value="Register">
         </form>
-    </div> <!-- This closing div was missing -->
+    </div> 
 @endsection
