@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('arts', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->string('voornaam');
-            $table->string('tussenvoegsel')->nullable();
-            $table->string('achternaam');
-            $table->string('adres');
-            $table->string('postcode');
-            $table->string('woonplaats');
-            $table->string('land');
-            $table->string('telefoon');
-            $table->string('mobiel');
+            $table->id()->primary()->length(10);
+            $table->string('voornaam')->length(50);
+            $table->string('tussenvoegsel')->length(10)->nullable();
+            $table->string('achternaam')->length(50);
+            $table->string('adres')->length(100);
+            $table->string('postcode')->length(10);
+            $table->string('woonplaats')->length(50);
+            $table->string('land')->length(50);
+            $table->string('telefoon')->length(20);
+            $table->string('mobiel')->lenght(20);
         });
     }
 

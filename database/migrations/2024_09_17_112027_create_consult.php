@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('consult', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->string('artsId');
-            $table->string('cliëntId');
-            $table->string('tekst')->nullable();
+            $table->id()->primary()->length(10);
+            $table->integer('artsId')->length(10);
+            $table->integer('cliëntId')->length(10);
+            $table->string('tekst')->length(999)->nullable();
         });
     }
 
