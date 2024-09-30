@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cliënt', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('voornaam');
-            $table->string('tussenvoegsel');
+            $table->string('tussenvoegsel')->nullable();
             $table->string('achternaam');
             $table->string('foto');
             $table->string('adres');
