@@ -15,7 +15,7 @@
   <li><a href="/news/">over ons</a></li>
   <li><a href="/contact/">nieuws</a></li>
   <li><a href="/about/">spoed</a></li>
-  <span class="material-symbols-outlined">person</span>
+<a href="/login"<span class="material-symbols-outlined">person</span>
 </ul>
 @yield ('content')
 </body>

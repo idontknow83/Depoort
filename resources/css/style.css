@@ -7,9 +7,13 @@ body {
   height: 100vh; 
   margin: 0;
 }
-
+ul span{
+  font-size: 35px !important;
+ }
 
 ul {
+  display: flex;
+  justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -18,7 +22,7 @@ ul {
 }
 
 li {
-  float: left;
+  float: right;
 }
 
 li a {
