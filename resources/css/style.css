@@ -17,19 +17,21 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: #0077B6;
+}
+span{
+  float: right;
 }
 
 li {
-  float: left;
+  float:left;
 }
 
 li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 17px;
   text-decoration: none;
 }
 
@@ -54,9 +56,11 @@ li a:hover:not(.active) {
   background-color: #f6f2f2;
   padding: 20px;
   border-radius: 5px;
+  margin: 0px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
+
 }
 
 h2 {
@@ -169,6 +173,81 @@ label#geslacht {
 
 .d-flex-center {
   display: flex;
+  justify-content: center; 
+  margin-bottom: 10px; 
+}
+
+/*home page styling*/
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Centered Container */
+.centered-container {
+  margin-top:20px;
+  text-align: center;
+}
+
+/* Main Header */
+.main-header {
+  font-size: 60px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Information Paragraph */
+.info-paragraph {
+  font-size: 18px;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Flex Container */
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Image Text Container */
+.image-text-container {
+  text-align: center;
+  width: 40%;
+}
+
+/* Image Styles */
+.image-text-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Image Caption */
+.image-caption {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flex-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .image-text-container {
+      width: 90%;
+  }
+}
+.location-image {
+  width: 30%; 
+  height: auto; 
+  margin-top: 20px; 
+}
+
+
   justify-content: center;
 }
 
