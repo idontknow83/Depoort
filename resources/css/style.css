@@ -179,53 +179,176 @@ label#geslacht {
 
 /*home page styling*/
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Centered Container */
-.centered-container {
-  margin-top:20px;
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0;
+  background-color: #ecf0f1;
+  padding-left: 50px;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-header {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.hero-paragraph {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 0;
+  background-color: #fff;
   text-align: center;
 }
 
-/* Main Header */
-.main-header {
-  font-size: 60px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 20px;
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
-/* Information Paragraph */
-.info-paragraph {
+.section-description {
   font-size: 18px;
-  color: #666;
-  margin-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #7f8c8d;
 }
 
-/* Flex Container */
+/* Features Section */
+.features-section {
+  padding: 60px 0;
+  background-color: #ecf0f1;
+}
+
 .flex-container {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 40px;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-/* Image Text Container */
-.image-text-container {
+.feature {
+  flex: 1;
   text-align: center;
-  width: 40%;
 }
 
-/* Image Styles */
-.image-text-container img {
-  width: 100%;
-  height: auto;
+.feature img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Caption */
-.image-caption {
+.feature-title {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #2c3e50;
+}
+
+.feature-description {
   font-size: 16px;
+  color: #7f8c8d;
+}
+/* Contact and Opening Hours Section - Black Container */
+.contact-opening-hours {
+  padding: 60px 0;             /* Vertical padding for spacing */
+  background-color: #0077B6;;  /* Dark background for the container */
+  color: #fff;                /* White text color for readability */
+}
+
+.contact-opening-hours .container {
+  max-width: 1200px;          /* Maximum width for the container */
+  margin: 0 auto;             /* Center the container */
+}
+
+.contact-opening-hours h2 {
+  font-size: 36px;            /* Font size for the section title */
+  margin-bottom: 30px;        /* Space below the title */
+  color: #ecf0f1;             /* Light grey color for section title */
+  text-align: center;         /* Center-align the title */
+}
+
+.flex-container {
+  display: flex;              /* Flexbox layout for child elements */
+  justify-content: space-around; /* Space out child elements */
+  gap: 40px;                 /* Gap between items */
+  flex-wrap: wrap;           /* Allow wrapping on smaller screens */
+}
+
+.contact-info, .opening-hours {
+  flex: 1;                   /* Flex item takes up equal space */
+  text-align: left;          /* Left-align text */
+  padding: 20px;             /* Padding inside the boxes */
+  background-color: #0077B6;; /* Slightly lighter grey for content boxes */
+  border-radius: 8px;        /* Rounded corners for boxes */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+  margin: 10px;              /* Space between the boxes */
+}
+
+.contact-info h3, .opening-hours h3 {
+  font-size: 24px;           /* Font size for subsection titles */
+  margin-bottom: 15px;       /* Space below subsection titles */
+  color: #ecf0f1;            /* Light grey color for subsection titles */
+}
+
+.contact-info p, .opening-hours ul {
+  font-size: 16px;           /* Font size for text */
+  color: #bdc3c7;            /* Light grey color for content text */
+}
+
+.opening-hours ul {
+  list-style: none;          /* Remove bullet points from list */
+  padding: 0;                /* Remove padding from list */
+}
+
+.opening-hours ul li {
+  margin-bottom: 10px;       /* Space between list items */
+  border-bottom: 1px solid #7f8c8d; /* Light border for separation */
+  padding-bottom: 8px;       /* Space below list items */
+}
+
+.opening-hours ul li:last-child {
+  border-bottom: none;       /* Remove border for the last item */
+}
   color: #666;
   margin-top: 10px;
 }
