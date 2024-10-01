@@ -1,14 +1,19 @@
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2; /* Kies een achtergrondkleur die je wilt */
   display: flex;
-  flex-direction: column; /* Zorgt voor een flexibele layout */
-  height: 100vh; /* Zorgt ervoor dat de body de volledige hoogte van het scherm gebruikt */
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2; 
+  flex-direction: column;
+  height: 100vh; 
   margin: 0;
 }
+ul span{
+  font-size: 35px !important;
+ }
 
-/* Navbar stijl */
 ul {
+  display: flex;
+  justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -36,16 +41,15 @@ li a:hover:not(.active) {
   background-color: #0077B6;
 }
 
-/* Container voor inhoud */
+
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-grow: 1; 
   padding: 20px;
 }
 
-/* Stijl van het login formulier */
+
 .login-container {
   background-color: #f6f2f2;
   padding: 20px;
@@ -59,7 +63,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Formulierelementen */
+/* Form inputs */
 input[type="text"],
 input[type="password"] {
   width: 90%;
@@ -68,6 +72,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 50px;
 }
+
 
 button {
   width: 100%;
@@ -83,7 +88,6 @@ button:hover {
   background-color: #0077B6;
 }
 
-
 form.register-form {
   display: flex;
   flex-direction: column;
@@ -98,35 +102,30 @@ form.register-form {
   overflow-y: auto; 
 }
 
-/* Labels */
 label {
   margin-top: 10px;
   font-weight: bold;
 }
 
-/* Invoer- en tekstgebieden */
 input, select, textarea {
   margin-bottom: 15px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 50px;
   border: 1px solid #ccc;
   font-size: 16px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Radio buttons */
 input[type="radio"] {
   margin-right: 10px;
 }
 
-/* Focus-stijl */
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: #4a90e2;
 }
 
-/* Submit-button */
 input[type="submit"] {
   padding: 12px;
   background-color: #4a90e2;
@@ -143,12 +142,12 @@ input[type="submit"]:hover {
   background-color: #357ab7;
 }
 
-/* Specifieke stijlen */
 .label2 {
   display: block;
   margin-bottom: 5px;
   text-align: left;
 }
+
 
 .address-group {
   display: flex;
@@ -164,7 +163,34 @@ label#geslacht {
 }
 
 .gender-group {
-  display: flex;
-  justify-content: center; 
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
+
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+.container {
+  display: flex;
+}
+
+.gegevens {
+  border-radius: 10px;
+  border: 5px solid #00B4D8;
+  padding: 45px;
+  font-size: 30px;
+}
+
+
+.person1 {
+  font-size: 90px !important;
+}
+
+#dashboard-gegevens-label {
+  margin: 0;
+  padding: 0;
+}
+
