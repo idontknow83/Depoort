@@ -348,7 +348,7 @@ body {
 
 .opening-hours ul li:last-child {
   border-bottom: none;       /* Remove border for the last item */
-}
+
   color: #666;
   margin-top: 10px;
 }
@@ -368,11 +368,8 @@ body {
   width: 30%; 
   height: auto; 
   margin-top: 20px; 
-}
+ justify-content: center; }
 
-
-  justify-content: center;
-}
 
 
 .container {
@@ -396,3 +393,6 @@ body {
   padding: 0;
 }
 
+.rbutton{
+  background-color: #00B4D8 !important;
+}
