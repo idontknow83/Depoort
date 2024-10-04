@@ -2,32 +2,32 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- Name -->
+        <!-- Naam -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <x-input-label for="naam" :value="__('Naam')" />
+            <x-text-input id="naam" class="block mt-1 w-full" type="text" name="naam" :value="old('naam')" required autofocus autocomplete="off"/>
+            <x-input-error :messages="$errors->get('naam')" class="mt-2" />
         </div>
 
         <!-- Telnummer -->
         <div class="mt-4">
             <x-input-label for="telnummer" :value="__('Telnummer')" />
-            <x-text-input id="telnummer" class="block mt-1 w-full" type="number" name="telnummer" :value="old('telnummer')" required autocomplete="tel" />
+            <x-text-input id="telnummer" class="block mt-1 w-full" type="number" name="telnummer" :value="old('telnummer')" required autocomplete="off"/>
             <x-input-error :messages="$errors->get('telnummer')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="email" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="off"/>
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- Address -->
+        <!-- Adres -->
         <div class="mt-4">
-            <x-input-label for="adress" :value="__('Address')" />
-            <x-text-input id="adress" class="block mt-1 w-full" type="text" name="adress" :value="old('adress')" required autocomplete="address" />
-            <x-input-error :messages="$errors->get('adress')" class="mt-2" />
+            <x-input-label for="adres" :value="__('Adres')" />
+            <x-text-input id="adres" class="block mt-1 w-full" type="text" name="adres" :value="old('adres')" required autocomplete="off"/>
+            <x-input-error :messages="$errors->get('adres')" class="mt-2" />
         </div>
 
         <!-- Land and Postcode (side by side) -->
@@ -35,14 +35,14 @@
             <!-- Land -->
             <div class="w-1/2">
                 <x-input-label for="land" :value="__('Land')" />
-                <x-text-input id="land" class="block mt-1 w-full" type="text" name="land" :value="old('land')" required autocomplete="country-name" />
+                <x-text-input id="land" class="block mt-1 w-full" type="text" name="land" :value="old('land')" required autocomplete="off"/>
                 <x-input-error :messages="$errors->get('land')" class="mt-2" />
             </div>
 
             <!-- Postcode -->
             <div class="w-1/2">
                 <x-input-label for="postcode" :value="__('Postcode')" />
-                <x-text-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" :value="old('postcode')" required autocomplete="postal-code" />
+                <x-text-input id="postcode" class="block mt-1 w-full" type="text" name="postcode" :value="old('postcode')" required autocomplete="off"/>
                 <x-input-error :messages="$errors->get('postcode')" class="mt-2" />
             </div>
         </div>
@@ -50,7 +50,7 @@
         <!-- Woonplaats -->
         <div class="mt-4">
             <x-input-label for="woonplaats" :value="__('Woonplaats')" />
-            <x-text-input id="woonplaats" class="block mt-1 w-full" type="text" name="woonplaats" :value="old('woonplaats')" required autocomplete="address-level2" />
+            <x-text-input id="woonplaats" class="block mt-1 w-full" type="text" name="woonplaats" :value="old('woonplaats')" required autocomplete="off"/>
             <x-input-error :messages="$errors->get('woonplaats')" class="mt-2" />
         </div>
 
@@ -76,23 +76,23 @@
 
         <!-- Geboortedatum -->
         <div class="mt-4">
-            <x-input-label for="birthdate" :value="__('Geboortedatum')" />
-            <x-text-input id="birthdate" class="block mt-1 w-full" type="date" name="birthdate" :value="old('birthdate')" required autocomplete="bday" />
-            <x-input-error :messages="$errors->get('birthdate')" class="mt-2" />
+            <x-input-label for="geboortedatum" :value="__('Geboortedatum')" />
+            <x-text-input id="geboortedatum" class="block mt-1 w-full" type="date" name="geboortedatum" :value="old('geboortedatum')" required autocomplete="off"/>
+            <x-input-error :messages="$errors->get('geboortedatum')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            <x-input-label for="password" :value="__('Wachtwoord')" />
+            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="off"/>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
     
        <!-- Confirm Password -->
        <div class="mt-4">
-        <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-        <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+        <x-input-label for="password_confirmation" :value="__('Herhaal Wachtwoord')" />
+        <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="off"/>
         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
     </div>
 

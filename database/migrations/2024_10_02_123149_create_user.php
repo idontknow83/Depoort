@@ -14,8 +14,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->length(50);
+            $table->string('naam')->length(50);
+            $table->string('telnummer')->length(50);
             $table->string('email')->length(50);
+            $table->string('adres')->length(50);
+            $table->string('land')->length(50);
+            $table->string('postcode')->length(50);
+            $table->string('woonplaats')->length(50);
+            $table->string('gender')->length(50);
+            $table->string('geboortedatum')->length(50);
             $table->string('password')->length(200);
             $table->timestamps();
         });
