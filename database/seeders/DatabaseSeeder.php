@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +26,24 @@ class DatabaseSeeder extends Seeder
             'geboortedatum' => '26-12-1791',
             'password' => Hash::make( 'password'),
         ]);
+
+        User::factory(10)->create();
+        $this->call(LaratrustSeeder::class);
+
+        /*
+        Available methods:
+        - addRole
+        - addRoles
+        - removeRole
+        - removeRoles
+        - givePermission
+        - givePermissions
+        - removePermission
+        - removePermissions
+        */
+
+        User::find(1)->addRole('admin');
+
 
         // DB::table('client')->insert([
         //     'voornaam' => fake()->firstName(),
