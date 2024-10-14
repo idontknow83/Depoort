@@ -7,11 +7,11 @@ body {
   height: 100vh; 
   margin: 0;
 }
-ul span{
+ul.hnavbar span{
   font-size: 35px !important;
  }
 
-ul {
+ul.hnavbar {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
