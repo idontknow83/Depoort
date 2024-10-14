@@ -9,7 +9,7 @@
        @yield ('title')
   </head>
   <body>
-  <ul>
+  <ul class="hnavbar">
     <li><a href="/home/">praktijk</a></li>
     <li><a href="/news/">over ons</a></li>
     <li><a href="/contact/">nieuws</a></li>
