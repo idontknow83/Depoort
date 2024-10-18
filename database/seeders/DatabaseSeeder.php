@@ -84,8 +84,6 @@ class DatabaseSeeder extends Seeder
         User::find(1)->addRole('root');
         User::find(2)->addRole('admin');
         User::find(3)->addRole('arts');
-        User::find(4)->addRole('user');
-
 
         // DB::table('client')->insert([
         //     'voornaam' => fake()->firstName(),

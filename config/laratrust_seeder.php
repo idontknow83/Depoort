@@ -27,8 +27,6 @@ return [
             'consults' => 'c,r,u,d,gvp',
 
         ],
-        'user' => [
-        ],
     ],
 
     'permissions_map' => [
