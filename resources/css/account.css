@@ -1,0 +1,24 @@
+.vnavbar-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.vnavbar-item {
+    background-color: #00000000;
+    color: black;
+    min-width: 200px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.vnavbar-item a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    background-color: #00000000;
+}
