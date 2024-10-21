@@ -34,7 +34,7 @@
                 </a>
             @endif --}}<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">Nog geen account? Klik hier</a>
 
-            <x-primary-button class="ms-3" style="background-color: #00B4D8;">
+            <x-primary-button class="ms-3" style="background-color: rgb(31, 41, 55);">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
