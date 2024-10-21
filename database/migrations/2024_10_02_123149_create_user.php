@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('telnummer')->length(50);
             $table->string('email')->length(50);
             $table->string('adres')->length(50);
-            $table->string('land')->length(50);
+            $table->string('land')->length(100);
             $table->string('postcode')->length(50);
             $table->string('woonplaats')->length(50);
             $table->string('gender')->length(50);

@@ -5,22 +5,17 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- number -->
+        <!-- Phone Number -->
         <div>
-            <x-input-label for="number   " :value="__('Telefoonnummer')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('number')" class="mt-2" />
+            <x-input-label for="telnummer" :value="__('Telnummer')" />
+            <x-text-input id="telnummer" class="block mt-1 w-full" type="text" name="telnummer" :value="old('telnummer')" required autofocus autocomplete='off' />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
+            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete='off' />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -39,7 +34,7 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3" style="background-color: #00B4D8;">
+            <x-primary-button class="ms-3" style="background-color: rgb(31, 41, 55);">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

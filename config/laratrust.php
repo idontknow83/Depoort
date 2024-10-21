@@ -198,7 +198,7 @@ return [
          * Method to be called in the middleware return case.
          * Available: abort|redirect.
          */
-        'handling' => 'abort',
+        'handling' => 'redirect',
 
         /**
          * Handlers for the unauthorized method in the middlewares.
@@ -220,7 +220,7 @@ return [
              * If the message content is empty it won't be added to the redirection.
              */
             'redirect' => [
-                'url' => '/home',
+                'url' => env('app_url') . '/public',
                 'message' => [
                     'key' => 'error',
                     'content' => '',
