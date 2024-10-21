@@ -17,7 +17,9 @@
         <th>woonplaats</th>
         <th>gender</th>
         <th>geboortedatum</th>
+        @permission('users-delete')
         <th>delete</th>
+        @endpermission
     </tr>
     @foreach($users as $user)
     <tr>
@@ -31,8 +33,10 @@
         <td>{{ $user->woonplaats }}</td>
         <td>{{ $user->gender }}</td>
         <td>{{ $user->geboortedatum }}</td>
+        @permission('users-delete')
         <td><a href="{{ env('app_url') }}/public/users/delete/{{ $user->id }} " style="color:#0077B6; text-decoration: none;">Delete</a></td>
-    </tr>
+        @endpermission
+        </tr>
     @endforeach
 </table>
 @endsection
