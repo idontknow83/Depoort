@@ -4,11 +4,12 @@ import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
 
+Alpine.start();
 
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
-    var calendar = new Calendar(calendarEl, {
+    var calendar = new calendar(calendarEl, {
         plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
         initialView: 'timeGridWeek',  // Weekview zoals Google Calendar
         headerToolbar: {
