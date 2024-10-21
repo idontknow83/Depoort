@@ -10,5 +10,12 @@ class Consult extends Model
     use HasFactory;
 
     public $table = 'consult';
+
+    public $fillable = [
+        'title',
+        'start_time', 
+        'end_time,'
+    ];
+
     public $timestamps = false;
 }

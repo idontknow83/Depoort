@@ -1,11 +1,19 @@
 <?php
 
+use App\Http\Controllers\ConsultController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Consult;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/agenda', function () {
+    return view('consults.agenda');
+});
+Route::get('/consults/create', [ConsultController::class, 'create']);
+Route::post('/consults/store', [ConsultController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
