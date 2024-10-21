@@ -56,19 +56,19 @@
 
         <!-- Gender (Radio Buttons) -->
         <div class="mt-4">
-            <x-input-label :value="__('Gender')" />
+            <x-input-label :value="__('Geslacht')" />
             <div class="mt-2">
                 <label for="male">
                     <input type="radio" id="male" name="gender" value="male" required>
-                    {{ __('Male') }}
+                    {{ __('Man') }}
                 </label>
                 <label for="female" class="ml-4">
                     <input type="radio" id="female" name="gender" value="female" required>
-                    {{ __('Female') }}
+                    {{ __('Vrouw') }}
                 </label>
                 <label for="other" class="ml-4">
                     <input type="radio" id="other" name="gender" value="other" required>
-                    {{ __('Other') }}
+                    {{ __('Anders') }}
                 </label>
             </div>
             <x-input-error :messages="$errors->get('gender')" class="mt-2" />
