@@ -17,12 +17,20 @@ class UserController extends Controller
 
     public function delete(string $id)
     {
+        $record = 
         DB::table('users')
+            ->select()
             ->leftJoin('role_user', 'users.id', '=', 'role_user.user_id')
+            ->whereRaw('users.id =' . $id . ' AND (role_user.role_id IS NULL OR role_user.role_id = 3)')
+        ->count();
+
+        if ($record > 0) {
+            DB::table('users')
             ->where('id', '=', $id)
-            ->whereNot('role_id', '=', '1')
-            ->whereNot('role_id', '=', '2')
             ->delete();
-        return redirect(config('app_url') . '/users');
+            return redirect(config('app_url') . '/users');
+        } else {
+            return redirect(config('app_url') . '/users');
+        }
     }
 }
