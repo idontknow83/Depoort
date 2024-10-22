@@ -8,9 +8,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('accountinfo', function () {
-    return view('accountinfo');
-}); 
+Route::group(['prefix' => '/account'], function() {
+    Route::get('/info', [UserController::class, 'edit'])->middleware(['auth', 'verified']);
+    Route::put('/update', [UserController::class, 'update'])->middleware(['auth', 'permission:users-update']);
+
+    
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

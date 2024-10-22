@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
+ 
+
+
 class UserController extends Controller
 {
     public function show() 
@@ -13,6 +16,19 @@ class UserController extends Controller
         $users = DB::table('users')
             ->get();
         return view('users.index')->with('users', $users);
+    }
+
+    public function edit(User $user, ) {
+        $user = auth()->user();
+        return view('accountinfo')->with('user', $user);
+    }
+
+    public function update(Request $request) {
+        $user = auth()->user();
+        $user->fill($request ->all())->save();
+        if ($user->fill($request ->all())->save()) {
+            return redirect(env('app_url') . '/public/account/info');
+        }
     }
 
     public function delete(string $id)
@@ -26,3 +42,5 @@ class UserController extends Controller
         return redirect(config('app_url') . '/users');
     }
 }
+
+
