@@ -44,9 +44,9 @@ class UserController extends Controller
             DB::table('users')
             ->where('id', '=', $id)
             ->delete();
-            return redirect(config('app_url') . '/users');
+            return back()->with(['success' => true, 'message' => 'User deleted succesfully']);
         } else {
-            return redirect(config('app_url') . '/users');
+            return back()->with(['error' => true, 'message' => 'Couldn\'t delete the user']);
         }
     }
 }
