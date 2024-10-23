@@ -8,7 +8,7 @@
     <div class="flex justify-evenly ...">
         <div class="flex flex-row ...">
             <div class="py-12">
-                <a href="{{ env('app_url') }}/public/accountinfo" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <a href="{{ env('app_url') }}/public/account/info" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg size-60 flex px-16 place-items-center">
                         <div class="flex items-center flex-col text-gray-900 w-100">
                             <svg class="w-16" xmlns="http://www.w3.org/2000/svg"
