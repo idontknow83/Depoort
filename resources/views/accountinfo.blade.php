@@ -6,6 +6,12 @@
 @endsection
 
 @section('content')
+@if (session('success'))
+<x-success-msg message="{{ session('message') }}" color="green" />
+@elseif (session('error'))
+<x-success-msg message="{{ session('message') }}" color="red" />
+@endif
+
 <form action="{{ url('/account/update') }}" method="POST" class="main">
     @method('PUT')
     @csrf
