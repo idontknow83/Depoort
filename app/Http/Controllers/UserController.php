@@ -23,6 +23,10 @@ class UserController extends Controller
 
     public function update(Request $request) {
         $user = auth()->user();
+        $request->validate([
+            'telnummer' => 'required|unique:users,telnummer,',
+            // Other validation rules...
+        ]);
         $user->fill($request ->all())->save();
         if ($user->fill($request ->all())->save()) {
             return back()->with(['success' => true, 'message' => 'User updated successfully']);

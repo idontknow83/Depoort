@@ -15,8 +15,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('naam')->length(50);
-            $table->string('telnummer')->length(50);
-            $table->string('email')->length(50);
+            $table->string('telnummer')->length(50)->unique();
+            $table->string('email')->length(50)->unique();
             $table->string('adres')->length(50);
             $table->string('land')->length(100);
             $table->string('postcode')->length(50);
