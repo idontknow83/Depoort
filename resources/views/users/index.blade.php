@@ -7,17 +7,9 @@
 @section('content')
 
 @if (session('success'))
-<div style="display: flex; justify-content: center">
-    <div style="margin: 5px; padding: 5px; border: 2px solid black; border-radius: 10px; font-weight: bold; color: white; background-color: green;">
-        {{ session('message') }}
-    </div>
-</div>
+<x-success-msg message="{{ session('message') }}" color="green" />
 @elseif (session('error'))
-<div style="display: flex; justify-content: center">
-    <div style="margin: 5px; padding: 5px; border: 2px solid black; border-radius: 10px; font-weight: bold; color: white; background-color: red;">
-        {{ session('message') }}
-    </div>
-</div>
+<x-success-msg message="{{ session('message') }}" color="red" />
 @endif
     
 <table>

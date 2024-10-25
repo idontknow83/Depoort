@@ -6,9 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
- 
-
-
 class UserController extends Controller
 {
     public function show() 
@@ -18,7 +15,7 @@ class UserController extends Controller
         return view('users.index')->with('users', $users);
     }
 
-    public function edit(User $user, ) {
+    public function edit() {
         $user = auth()->user();
         return view('accountinfo')->with('user', $user);
     }
@@ -46,9 +43,7 @@ class UserController extends Controller
             ->delete();
             return back()->with(['success' => true, 'message' => 'User deleted succesfully']);
         } else {
-            return back()->with(['error' => true, 'message' => 'Couldn\'t delete the user']);
+            return back()->with(['error' => true, 'message' => "Something went wrong trying to delete the user"]);
         }
     }
 }
-
-
