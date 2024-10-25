@@ -14,6 +14,7 @@ class UserController extends Controller
             ->get();
         return view('users.index')->with('users', $users);
     }
+    
 
     public function edit() {
         $user = auth()->user();
@@ -24,7 +25,9 @@ class UserController extends Controller
         $user = auth()->user();
         $user->fill($request ->all())->save();
         if ($user->fill($request ->all())->save()) {
-            return redirect(env('app_url') . '/public/account/info');
+            return back()->with(['success' => true, 'message' => 'User updated successfully']);
+        } else {
+            return back()->with(['error' => true, 'message' => "Something went wrong trying to update the user "]);
         }
     }
 
