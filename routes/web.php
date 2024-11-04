@@ -13,10 +13,7 @@ Route::get('/', function () {
 Route::group(['prefix' => '/account'], function() {
     Route::get('/info', [UserController::class, 'edit'])->middleware(['auth', 'verified']);
     Route::put('/update', [UserController::class, 'update'])->middleware(['auth', 'permission:users-update']);
-
-    
 });
-
 
 Route::get('/agenda', function () {
     return view('consults.agenda');
