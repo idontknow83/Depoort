@@ -20,9 +20,9 @@ class ImageController extends Controller
         $file = $request->file('file');
         $fileName = time() . '_' . $file->getClientOriginalName();
         $filePath = $file->storeAs('uploads', $fileName);
-        $user->find($request->id);
+        // $user->find($request->id);
         DB::table('users')
-            ->where('id', 1)
+            ->where('id', auth()->user()->id)
             ->update([
                 'image' => $filePath
             ]);
