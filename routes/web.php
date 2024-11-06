@@ -18,9 +18,12 @@ Route::group(['prefix' => '/account'], function() {
 });
 
 
-Route::get('/agenda', function () {
-    return view('consults.agenda');
+Route::group(['prefix' => '/agenda'], function() {
+    Route::get('/', [ConsultController::class, 'show']);
+    Route::put('/create', [ConsultController::class, 'create']);
 });
+
+
 Route::get('/consults/create', [ConsultController::class, 'create']);
 Route::post('/consults/store', [ConsultController::class, 'store']);
 

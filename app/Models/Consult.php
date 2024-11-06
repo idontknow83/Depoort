@@ -12,9 +12,9 @@ class Consult extends Model
     public $table = 'consult';
 
     public $fillable = [
-        'title',
+        // '',
         'start_time', 
-        'end_time,'
+        'end_time',
     ];
 
     public $timestamps = false;
