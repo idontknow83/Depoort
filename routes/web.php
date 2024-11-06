@@ -12,7 +12,9 @@ Route::get('/', function () {
 
 Route::group(['prefix' => '/account'], function() {
     Route::get('/info', [UserController::class, 'edit'])->middleware(['auth', 'verified']);
+    Route::get('/info/{id}', [UserController::class, 'editOther'])->middleware(['auth', 'permission:users-update']);
     Route::put('/update', [UserController::class, 'update'])->middleware(['auth', 'permission:users-update']);
+    
 
     
 });
