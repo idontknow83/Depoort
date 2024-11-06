@@ -11,11 +11,14 @@ class Consult extends Model
 
     public $table = 'consult';
 
-    public $fillable = [
-        // '',
-        'start_time', 
-        'end_time',
-    ];
+    // public $fillable = [
+    //     'clientId',
+    //     'tekst',
+    //     'start_time', 
+    //     'end_time',
+    // ];
+
+    protected $guarded = [];
 
     public $timestamps = false;
 }

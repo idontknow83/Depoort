@@ -27,7 +27,7 @@ class ConsultController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'clientid' => 'required|',
+            'clientId' => 'required|',
             'tekst' => 'required',
             'start_time' => 'required|date',
             'end_time' => 'required|date|after:start_time',

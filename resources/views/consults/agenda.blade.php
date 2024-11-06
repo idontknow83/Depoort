@@ -10,13 +10,11 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
 </head>
 <body>
-@if (session('succes'))
-<x-success-msg message="{{session ('message')}}" color="green"/>
-@elseif (session('error'))
-<x-success-msg message="{{session ('message')}}" color="red"/>
-@endif
-
-
+    @if (session('success'))
+    <x-success-msg message="{{ session ('message') }}" color="blue" />
+    @elseif (session('error'))
+    <x-success-msg message="{{ session ('message') }}" color="red" />
+    @endif
     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#afspraakModal">
         Afspraak maken
     </button>
@@ -35,8 +33,8 @@
                 <div class="modal-body">
                     <form id="afspraakForm">
                         <div class="form-group">
-                            <label for="naam">Naam</label>
-                            <input type="text" name="name" class="form-control" id="naam" placeholder="Vul je naam in" required>
+                            <label for="clientId">cliëntId</label>
+                            <input type="ID" name="clientId" class="form-control" id="clientId" placeholder="Vul je cliëntId in" required>
                         </div>
                         <div class="form-group">
                             <label for="datum">Datum</label>
@@ -51,9 +49,10 @@
                             <input type="time" name="end_time" class="form-control" id="end_time" required>
                         </div>
                         <div class="form-group">
-                            <label for="reden">Reden</label>
-                            <textarea class="form-control" name="reason" id="tekst" placeholder="Geef een reden voor de afspraak" required></textarea>
+                            <label for="tekst">Reden</label>
+                            <textarea class="form-control" name="tekst" id="tekst" placeholder="Geef een reden voor de afspraak" required></textarea>
                         </div>
+                        <input type="hidden" name="artsId" value="{{ auth()->user()->id }}">
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -80,6 +79,7 @@
             });
             calendar.render();
         });
-    </script>
+        
+        </script>
 </body>
 </html>
