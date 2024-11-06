@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('gender')->length(50);
             $table->string('geboortedatum')->length(50);
             $table->string('password')->length(200);
+            $table->string('image')->length(200)->nullable();
             $table->timestamps();
         });
     }
