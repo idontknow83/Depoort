@@ -3,6 +3,7 @@
 use App\Http\Controllers\ConsultController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImageController;
 use App\Models\Consult;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,8 @@ Route::get('/', function () {
 Route::group(['prefix' => '/account'], function() {
     Route::get('/info', [UserController::class, 'edit'])->middleware(['auth', 'verified']);
     Route::put('/update', [UserController::class, 'update'])->middleware(['auth', 'permission:users-update']);
+    Route::get('/upload', [ImageController::class, 'showForm'])->middleware(['auth', 'verified']);   
+    Route::post('/upload', [ImageController::class, 'store'])->middleware(['auth', 'verified']);     
 });
 
 Route::get('/agenda', function () {
