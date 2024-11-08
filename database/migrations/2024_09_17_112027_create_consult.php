@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('consult', function (Blueprint $table) {
             $table->id()->primary()->length(10);
-            $table->integer('artsId')->length(10);
-            $table->integer('cliëntId')->length(10);
+            $table->string('title')->length(999);
+            $table->integer('artsId')->length(10)->nullable();
+            $table->integer('cliëntId')->length(10)->nullable();
             $table->string('tekst')->length(999)->nullable();
+            $table->string('start_time')->length(100);
+            $table->string('end_time')->length(10)->nullable();
         });
     }
 

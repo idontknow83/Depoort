@@ -12,12 +12,20 @@ return [
     'truncate_tables' => true,
 
     'roles_structure' => [
-        'admin' => [
+        'root' => [
             'users' => 'c,r,u,d',
-            'profile' => 'r,u',
+            'profile' => 'r,u,d',
+            'consults' => 'rq-p,gv-p' 
         ],
-        'user' => [
+        'admin' => [
+            'users' => 'r,u,d',
             'profile' => 'r,u',
+            'consults' => 'rq-p'
+        ],
+        'arts' => [
+            'users' => 'r',
+            'consults' => 'c,r,u,d,gvp',
+
         ],
     ],
 
@@ -26,5 +34,7 @@ return [
         'r' => 'read',
         'u' => 'update',
         'd' => 'delete',
+        'rqp' => 'request-permission',
+        'gvp' => 'give-permission',
     ],
 ];

@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+.main {
+    margin-left: 220px; 
+    padding: 20px;
+}
+h1 {
+    color: #333;
+}
+.info-section {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%; 
+    margin-top: 20px;
+}
+.info-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.info-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.gender-option {
+    display: inline-block;
+    margin-right: 10px;
+}
+.gender-option img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+button {
+    background-color: #00B4D8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #03047E;
+}
+.toggle-password {
+    cursor: pointer;
+    margin-left: 10px;
+}

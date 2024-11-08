@@ -13,6 +13,8 @@ $maxWidth = [
     '2xl' => 'sm:max-w-2xl',
 ][$maxWidth];
 @endphp
+<div>
+
 
 <div
     x-data="{
@@ -74,5 +76,5 @@ $maxWidth = [
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     >
         {{ $slot }}
-    </div>
+    </div> 
 </div>

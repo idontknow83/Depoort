@@ -15,13 +15,52 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
+            'naam' => 'root',
+            'telnummer' => '3',
+            'email' => 'root@example.com',
+            'adres' => 'None',
+            'land' => 'None',
+            'postcode' => '3306DB',
+            'woonplaats' => 'Cardboard Box',
+            'gender' => 'Other',
+            'geboortedatum' => '26-12-1791',
+            'password' => Hash::make( 'password'),
+        ]);
+
+        DB::table('users')->insert([
             'naam' => 'admin',
-            'telnummer' => '0123456789',
+            'telnummer' => '2',
             'email' => 'admin@example.com',
             'adres' => 'None',
-            'land' => 'Admin',
+            'land' => 'None',
             'postcode' => '3306DB',
-            'woonplaats' => 'Admin',
+            'woonplaats' => 'Cardboard Box',
+            'gender' => 'Other',
+            'geboortedatum' => '26-12-1791',
+            'password' => Hash::make( 'password'),
+        ]);
+
+        DB::table('users')->insert([
+            'naam' => 'arts',
+            'telnummer' => '1',
+            'email' => 'arts@example.com',
+            'adres' => 'None',
+            'land' => 'None',
+            'postcode' => '3306DB',
+            'woonplaats' => 'Cardboard Box',
+            'gender' => 'Other',
+            'geboortedatum' => '26-12-1791',
+            'password' => Hash::make( 'password'),
+        ]);
+
+        DB::table('users')->insert([
+            'naam' => 'user',
+            'telnummer' => '0',
+            'email' => 'someone@example.com',
+            'adres' => 'None',
+            'land' => 'None',
+            'postcode' => '3306DB',
+            'woonplaats' => 'Cardboard Box',
             'gender' => 'Other',
             'geboortedatum' => '26-12-1791',
             'password' => Hash::make( 'password'),
@@ -42,8 +81,9 @@ class DatabaseSeeder extends Seeder
         - removePermissions
         */
 
-        User::find(1)->addRole('admin');
-
+        User::find(1)->addRole('root');
+        User::find(2)->addRole('admin');
+        User::find(3)->addRole('arts');
 
         // DB::table('client')->insert([
         //     'voornaam' => fake()->firstName(),
