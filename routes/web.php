@@ -4,6 +4,7 @@ use App\Http\Controllers\ConsultController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ImageController;
+use App\Http\Middleware\CheckIfImageIsUploaded;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,11 +19,10 @@ Route::group(['prefix' => '/account'], function() {
 });
 Route::get('/Events', [ConsultController::class,'Events'] )->name('Events');
 
-Route::group(['prefix' => '/agenda'], function() {
-    Route::get('/', [ConsultController::class, 'show']);
-    Route::put('/create', [ConsultController::class, 'create']);
+Route::middleware([CheckIfImageIsUploaded::class])->group(function() {
+    Route::get('/agenda', [ConsultController::class, 'show']);
+    Route::put('/agenda/create', [ConsultController::class, 'create']);
 });
-
 
 Route::get('/consults/create', [ConsultController::class, 'create']);
 Route::post('/consults/store', [ConsultController::class, 'store']);
