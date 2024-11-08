@@ -17,17 +17,24 @@
     @csrf
     <div id="account-info" class="info-section">
         <h1>Account Info</h1>
-        <div style="display: flex; align-items: center;">
-            <label>Naam:</label>
-            <input type="text" name="naam" style="flex: 1; margin-right: 10px;" value="{{ $user->naam }}">
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <div style="display: flex; align-items: center;">
+                    <label>Naam:</label>
+                    <input type="text" name="naam" style="flex: 1; margin-right: 10px;" value="{{ $user->naam }}">
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <label>Telefoonnummer:</label>
+                <input type="text" name="telnummer" style="flex: 1; margin-right: 10px;" value="{{ $user->telnummer }}">
+            </div>
+            <div style="display: flex; align-items: center;">
+                <label>Email:</label>
+                <input type="text" name="email" style="flex: 1; margin-right: 10px;" value="{{ $user->email }}">
+            </div>
         </div>
-        <div style="display: flex; align-items: center;">
-            <label>Telefoonnummer:</label>
-            <input type="text" name="telnummer" style="flex: 1; margin-right: 10px;" value="{{ $user->telnummer }}">
+        <div>
+            <img style="width: 100px; height: 100px; border: 1px solid black; float: left" src="../../Storage/App/{{ $user->image }}">
         </div>
-        <div style="display: flex; align-items: center;">
-            <label>Email:</label>
-            <input type="text" name="email" style="flex: 1; margin-right: 10px;" value="{{ $user->email }}">
         </div>
         <div style="display: flex; align-items: center;">
             <label>Adres:</label>
