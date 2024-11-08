@@ -52,8 +52,8 @@
         </div>
     </section>
 
-     <!-- Contact and Opening Hours Section -->
-     <section class="contact-opening-hours">
+    <!-- Contact and Opening Hours Section -->
+    <section class="contact-opening-hours">
         <div class="container">
             <h2 class="section-title">Contact Gegevens en Openingstijden</h2>
             <div class="flex-container">

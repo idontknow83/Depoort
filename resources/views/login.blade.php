@@ -1,10 +1,10 @@
-@extends ('layout')
+@extends('layout')
 
-@section ('title')
+@section('title')
     <title>Login</title>
 @endsection
 
-@section ('content')
+@section('login-form')
     <div class="login-container">
         <h2>Login</h2>
         <form action="action_page.php" method="post">
@@ -20,4 +20,3 @@
         </form>
     </div>
 @endsection
-
