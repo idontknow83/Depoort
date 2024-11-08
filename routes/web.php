@@ -4,7 +4,6 @@ use App\Http\Controllers\ConsultController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ImageController;
-use App\Models\Consult;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +16,7 @@ Route::group(['prefix' => '/account'], function() {
     Route::get('/upload', [ImageController::class, 'showForm'])->middleware(['auth', 'verified']);   
     Route::post('/upload', [ImageController::class, 'store'])->middleware(['auth', 'verified']);     
 });
+Route::get('/Events', [ConsultController::class,'Events'] )->name('Events');
 
 Route::group(['prefix' => '/agenda'], function() {
     Route::get('/', [ConsultController::class, 'show']);

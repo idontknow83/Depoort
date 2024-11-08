@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Consult;
 
+   
+
 class ConsultController extends Controller
 {
     public function show()
@@ -12,6 +14,22 @@ class ConsultController extends Controller
         return view('consults.agenda', [
             'consult' => $consult
         ]); 
+    }
+    public function getEvents(Request $request)
+    {
+        $events = Consult::all(); 
+        
+        $formattedEvents = $events->map(function($event) {
+            return [
+                'tekst' => $event->tekst,
+                'start_time' => $event->date . 'T' . $event->start_time,
+                'end_time' => $event->date . 'T' . $event->end_time,
+                'clientId' => $event->clientId,
+                'id' => $event->id
+            ];
+        });
+
+        return response()->json($events);
     }
 
     public function create(Request $request, Consult $consult)
