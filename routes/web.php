@@ -3,7 +3,8 @@
 use App\Http\Controllers\ConsultController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
-use App\Models\Consult;
+use App\Http\Controllers\ImageController;
+use App\Http\Middleware\CheckIfImageIsUploaded;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,15 +15,16 @@ Route::group(['prefix' => '/account'], function() {
     Route::get('/info', [UserController::class, 'edit'])->middleware(['auth', 'verified']);
     Route::get('/info/{id}', [UserController::class, 'editOther'])->middleware(['auth', 'permission:users-update']);
     Route::put('/update', [UserController::class, 'update'])->middleware(['auth', 'permission:users-update']);
-    
+    Route::get('/upload', [ImageController::class, 'showForm'])->middleware(['auth', 'verified']);   
+    Route::post('/upload', [ImageController::class, 'store'])->middleware(['auth', 'verified']);     
+});
+Route::get('/Events', [ConsultController::class,'Events'] )->name('Events');
 
-    
+Route::middleware([CheckIfImageIsUploaded::class])->group(function() {
+    Route::get('/agenda', [ConsultController::class, 'show']);
+    Route::put('/agenda/create', [ConsultController::class, 'create']);
 });
 
-
-Route::get('/agenda', function () {
-    return view('consults.agenda');
-});
 Route::get('/consults/create', [ConsultController::class, 'create']);
 Route::post('/consults/store', [ConsultController::class, 'store']);
 
