@@ -6,30 +6,38 @@ use App\Models\Consult;
 
 class ConsultController extends Controller
 {
-    public function showConsult()
+    /**
+     * Show permissions management page for consultations.
+     */
+    public function permissionsPage()
     {
-        $consult = Consult::get();
-        return view('home', [
-            'consult' => $consult
-        ]); 
+        $consultations = Consult::all();
+        return view('consults.permissions', compact('consultations'));
     }
 
-    public function create(Request $request)
+    /**
+     * Grant view permission to administration for a consultation.
+     */
+    public function grantPermissionToAdmin(Consult $consult)
     {
-        $date = $request->input('date');
-        return view('consults.create', ['date' => $date]);
+        $consult->view_permission_for_admin = true;
+        $consult->save();
+
+        return redirect()->back()->with('success', 'Toegang voor administratie toegekend.');
     }
 
-    public function store(Request $request)
+    /**
+     * Revoke view permission from administration for a consultation.
+     */
+    public function revokePermissionFromAdmin(Consult $consult)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'start_time' => 'required|date',
-            'end_time' => 'required|date|after:start_time',
-        ]);
+        $consult->view_permission_for_admin = false;
+        $consult->save();
 
-        Consult::create($validated);
-
-        return redirect('/agenda')->with('success', 'Afspraak succesvol gemaakt!');
+        return redirect()->back()->with('success', 'Toegang voor administratie ingetrokken.');
     }
 }
+// Migration file
+Schema::table('consults', function (Blueprint $table) {
+    $table->boolean('view_permission_for_admin')->default(false);
+});

@@ -52,6 +52,21 @@
         </div>
     </section>
 
+<!-- New Over Ons Section -->
+<section class="over-ons-section">
+        <div class="container">
+            <h2 class="section-title">Over Ons</h2>
+            <p class="section-description">
+                Bij Huisartsen De Poort geloven we in de kracht van zorg op maat, ondersteund door een hecht team van ervaren zorgprofessionals. Onze missie is om elke patiënt niet alleen te behandelen, maar ook te begeleiden en te ondersteunen op weg naar gezondheid en welzijn.
+            </p>
+            <p class="section-description">
+                We zetten ons in om hoogwaardige zorg te leveren met aandacht voor de nieuwste medische inzichten en technieken. Bij De Poort wordt u gehoord, begrepen en met respect behandeld.
+            </p>
+        </div>
+    </section>
+
+
+
     <!-- Contact and Opening Hours Section -->
     <section class="contact-opening-hours">
         <div class="container">

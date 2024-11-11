@@ -12,22 +12,20 @@ return [
     'truncate_tables' => true,
 
     'roles_structure' => [
-        'root' => [
-            'users' => 'c,r,u,d',
-            'profile' => 'r,u,d',
-            'consults' => 'rq-p,gv-p' 
-        ],
-        'admin' => [
-            'users' => 'r,u,d',
-            'profile' => 'r,u',
-            'consults' => 'rq-p'
-        ],
-        'arts' => [
-            'users' => 'r',
-            'consults' => 'c,r,u,d,gvp',
-
-        ],
+    'root' => [
+        'users' => 'c,r,u,d',
+        'profile' => 'r,u,d',
+        'consults' => 'r,c,u,d,gvp'
     ],
+    'admin' => [
+        'users' => 'r,u,d',
+        'profile' => 'r,u',
+        'consults' => 'r'
+    ],
+    'arts' => [
+        'consults' => 'r,u,d,gvp'
+    ],
+],
 
     'permissions_map' => [
         'c' => 'create',
