@@ -1,21 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalender met Modal</title>
-    
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
 </head>
 <body>
-
+    @if (session('success'))
+    <x-success-msg message="{{ session ('message') }}" color="blue" />
+    @elseif (session('error'))
+    <x-success-msg message="{{ session ('message') }}" color="red" />
+    @endif
     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#afspraakModal">
-        afspraak maken
+        Afspraak maken
     </button>
 
-    <div class="modal fade" id="afspraakModal" tabindex="-1" aria-labelledby="afspraakModalLabel" aria-hidden="true">
+    <form method="POST" action={{url('/agenda/create')}} class="modal fade" id="afspraakModal" tabindex="-1" aria-labelledby="afspraakModalLabel" aria-hidden="true">
+       @method('PUT')
+       @csrf
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -25,72 +31,52 @@
                     </button>
                 </div>
                 <div class="modal-body">
-              
                     <form id="afspraakForm">
                         <div class="form-group">
-                            <label for="naam">Naam</label>
-                            <input type="text" class="form-control" id="naam" placeholder="Vul je naam in" required>
+                            <label for="clientId">cliëntId</label>
+                            <input type="ID" name="clientId" class="form-control" id="clientId" placeholder="Vul je cliëntId in" required>
                         </div>
                         <div class="form-group">
                             <label for="datum">Datum</label>
-                            <input type="date" class="form-control" id="datum" required>
+                            <input type="date" name="date" class="form-control" id="datum" required>
                         </div>
                         <div class="form-group">
-                            <label for="tijd">Tijd</label>
-                            <input type="time" class="form-control" id="tijd" required>
+                            <label for="tijd">Starttijd</label>
+                            <input type="time" name="start_time" class="form-control" id="start_time" required>
                         </div>
+                        <div class="form-group">
+                            <label for="eindtijd">Eindtijd</label>
+                            <input type="time" name="end_time" class="form-control" id="end_time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tekst">Reden</label>
+                            <textarea class="form-control" name="tekst" id="tekst" placeholder="Geef een reden voor de afspraak" required></textarea>
+                        </div>
+                        <input type="hidden" name="artsId" value="{{ auth()->user()->id }}">
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Afspraak Opslaan</button>
+                    <input type="submit" class="btn btn-primary">Afspraak Opslaan</button>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
-    <!-- Calendar -->
     <div id='calendar'></div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        let calendar; 
+         document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: '/agenda/events', 
+            eventDisplay: 'auto',
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                events: [] 
-            });
-            calendar.render();
         });
-
-        function submitForm() {
-            var naam = document.getElementById('naam').value;
-            var datum = document.getElementById('datum').value;
-            var tijd = document.getElementById('tijd').value;
-
-            if (naam && datum && tijd) {
-              
-                calendar.addEvent({
-                    title: naam,
-                    start: datum + 'T' + tijd,
-                    allDay: false
-                });
-
-                alert('Afspraak opgeslagen!\nNaam: ' + naam + '\nDatum: ' + datum + '\nTijd: ' + tijd);
-
-             
-                document.getElementById('afspraakForm').reset();
-                
-              
-                $('#afspraakModal').modal('hide');
-            } else {
-                alert('Vul alle velden in!');
-            }
-        }
-    </script>
-</body>
-</html>
+        calendar.render();
+            });
+</script>

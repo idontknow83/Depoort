@@ -4,35 +4,54 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Consult;
 
+   
+
 class ConsultController extends Controller
 {
-    /**
-     * Show permissions management page for consultations.
-     */
-    public function permissionsPage()
+    public function show()
     {
-        $consultations = Consult::all();
-        return view('consults.permissions', compact('consultations'));
+        $consult = Consult::get();
+        return view('consults.agenda', [
+            'consult' => $consult
+        ]); 
+    }
+    public function getEvents(Request $request)
+    {
+        $events = Consult::all(); 
+        
+        $formattedEvents = $events->map(function($event) {
+            return [
+                'tekst' => $event->tekst,
+                'start_time' => $event->date . 'T' . $event->start_time,
+                'end_time' => $event->date . 'T' . $event->end_time,
+                'clientId' => $event->clientId,
+                'id' => $event->id
+            ];
+        });
+
+        return response()->json($events);
     }
 
-    /**
-     * Grant view permission to administration for a consultation.
-     */
-    public function grantPermissionToAdmin(Consult $consult)
+    public function create(Request $request, Consult $consult)
     {
-        $consult->view_permission_for_admin = true;
-        $consult->save();
-
-        return redirect()->back()->with('success', 'Toegang voor administratie toegekend.');
+        $consult->fill($request->all())->save();
+        if ($consult->fill($request->all())->save()) {
+            return back()->with(['success' => true, 'message' => 'Consult created successfully']);
+        } else {
+            return back()->with(['error' => true, 'message' => 'error']);
+        }
     }
 
-    /**
-     * Revoke view permission from administration for a consultation.
-     */
-    public function revokePermissionFromAdmin(Consult $consult)
+    public function store(Request $request)
     {
-        $consult->view_permission_for_admin = false;
-        $consult->save();
+        $validated = $request->validate([
+            'clientId' => 'required|',
+            'tekst' => 'required',
+            'start_time' => 'required|date',
+            'end_time' => 'required|date|after:start_time',
+        ]);
+
+        Consult::create($validated);
 
         return redirect()->back()->with('success', 'Toegang voor administratie ingetrokken.');
     }
