@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ config("app.url") }}/resources/css/Component.css">
+<link rel="stylesheet" href="{{ config("app.url") }}/resources/css/component.css">
 <div id="error-popup">
     <div id="message" style=" background-color: {{ $color }};">
         {{ $message }}
