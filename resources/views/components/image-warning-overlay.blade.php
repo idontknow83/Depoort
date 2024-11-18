@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ config("app.url") }}/resources/css/Component.css">
+<link rel="stylesheet" href="{{ config("app.url") }}/resources/css/component.css">
 <div id="overlay" onclick="off()">
     <p>Je hebt nog geen foto geüpload</p>
     <div style="display: flex; font-size: 30px;">
