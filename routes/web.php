@@ -8,7 +8,7 @@ use App\Http\Middleware\CheckIfImageIsUploaded;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::group(['prefix' => '/account'], function() {
