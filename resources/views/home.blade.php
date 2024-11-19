@@ -54,16 +54,21 @@
 
 <!-- New Over Ons Section -->
 <section class="over-ons-section">
-        <div class="container">
-            <h2 class="section-title">Over Ons</h2>
-            <p class="section-description">
-                Bij Huisartsen De Poort geloven we in de kracht van zorg op maat, ondersteund door een hecht team van ervaren zorgprofessionals. Onze missie is om elke patiënt niet alleen te behandelen, maar ook te begeleiden en te ondersteunen op weg naar gezondheid en welzijn.
+    <div class="container">
+        <h2 class="section-title">Over Ons</h2>
+        <div class="over-ons-content">
+            <p>
+                Bij Huisartsen De Poort geloven we in de kracht van zorg op maat, ondersteund door een hecht team van ervaren zorgprofessionals. 
+                Onze missie is om elke patiënt niet alleen te behandelen, maar ook te begeleiden en te ondersteunen op weg naar gezondheid en welzijn.
             </p>
-            <p class="section-description">
-                We zetten ons in om hoogwaardige zorg te leveren met aandacht voor de nieuwste medische inzichten en technieken. Bij De Poort wordt u gehoord, begrepen en met respect behandeld.
+            <p>
+                We zetten ons in om hoogwaardige zorg te leveren met aandacht voor de nieuwste medische inzichten en technieken. 
+                Bij De Poort wordt u gehoord, begrepen en met respect behandeld.
             </p>
         </div>
-    </section>
+    </div>
+</section>
+
 
 
 

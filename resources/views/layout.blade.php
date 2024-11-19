@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -11,6 +11,10 @@
 </head>
 <body>
     <header>
+    <nav class="nav-bar">
+        <a href="/home/" class="logo">
+            <img src="https://i.ibb.co/N6t7g7n/logo.png" alt="Huisartsen De Poort Logo">
+        </a>
         <nav>
             <ul>
                 <li><a href="/home/">praktijk</a></li>
@@ -31,4 +35,3 @@
     </footer>
 </body>
 </html>
-
