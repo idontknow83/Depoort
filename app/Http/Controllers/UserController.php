@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use PhpParser\Node\NullableType;
 
 class UserController extends Controller
 {
@@ -15,10 +16,14 @@ class UserController extends Controller
         return view('users.index')->with('users', $users);
     }
     
-
     public function edit() {
-        $user = auth()->user();
-        return view('accountinfo')->with('user', $user);
+        $user1 = auth()->user();
+        return view('accountinfo')->with('user', $user1);
+    }
+
+    public function editOther(int $id, User $user) {
+        $user1 = $user->find($id);
+        return view('accountinfo')->with('user', $user1);
     }
 
     public function update(Request $request) {
