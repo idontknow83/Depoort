@@ -72,11 +72,15 @@
         <label>Geslacht:</label><br>
         <div class="gender-option">
             <input type="radio" id="male" name="gender" value="male" {{ $user->gender == 'male' ? 'checked' : '' }}>
-            <label for="male"><p>man</p></label>
+            <label for="male"><p>Man</p></label>
         </div>
         <div class="gender-option">
             <input type="radio" id="female" name="gender" value="female" {{ $user->gender == 'female' ? 'checked' : '' }}>
-            <label for="female"><p>vrouw</p></label>
+            <label for="female"><p>Vrouw</p></label>
+        </div>
+        <div class="gender-option">
+            <input type="radio" id="female" name="gender" value="female" {{ $user->gender == 'other' ? 'checked' : '' }}>
+            <label for="female"><p>Anders</p></label>
         </div>
     </div>            <button type="submit" style="width: 1029px;">edit</button>
    </form>
